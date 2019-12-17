@@ -11,11 +11,13 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@bazzite/nuxt-optimized-images": "^0.2.2",
     "@nuxtjs/pwa": "^3.0.0-0",
     "@nuxtjs/style-resources": "^1.0.0",
     "cross-env": "^5.2.0",
     "gleaf": "^1.1.21",
     "gleaf-extend": "^1.2.1",
+    "imagemin-pngquant": "^8.0.0",
     "koa": "^2.6.2",
     "nuxt": "^2.0.0"
   },

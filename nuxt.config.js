@@ -53,9 +53,14 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    '@bazzite/nuxt-optimized-images',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources'
   ],
+  
+  optimizedImages: {
+    optimizeImages: true
+  },
   /*
   ** Build configuration
   */

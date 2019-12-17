@@ -1,5 +1,7 @@
 <template>
   <div class="container">
+    <img src="../assets/images/login.gif" />
+     <img src="@/assets/images/wxPay.png" alt="">
     <yl-button type="primary">yl按钮</yl-button>
   </div>
 </template>
