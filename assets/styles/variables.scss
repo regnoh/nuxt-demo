@@ -1,0 +1,25 @@
+/* 全局变量参数 */
+$--color-primary: #10C29B !default;
+$--color-primary-active: darken($--color-primary, 5%) !default;
+
+$--color-text-primary: #1A1A1A !default;
+$--color-text-regular: #666 !default;
+$--color-text-secondary: #9A9A9A !default;
+$--color-text-placeholder: #B3B3B3 !default;
+
+$--background-color-base: #F5F5F5 !default;
+$--border-color-base: #E0E0E0 !default;
+
+$color-subPrimary: #F0F8F7;
+$bg-default: #F5F5F5;
+$border-default:  #E0E0E0;
+$font-primary: #1A1A1A;
+$font-default: #666;
+$font-default1: #999;
+$font-default9A: #9A9A9A;
+$font-default2: #ccc;
+$font-yellow: #FF7700;
+$font-red: #FF2E35;
+$font-blue: $--color-primary;
+
+$container-width:1200px;

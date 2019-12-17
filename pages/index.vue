@@ -8,6 +8,7 @@
       <h2 class="subtitle">
         My first-rate Nuxt.js project
       </h2>
+      <span>home</span>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
@@ -30,15 +31,15 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
-
+import '@/assets/styles/views/home.scss';// !1. 页面外部样式
 export default {
   components: {
     Logo
   }
 }
 </script>
-
-<style>
+// !2. lang='scss'
+<style lang="scss">
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -60,8 +61,8 @@ export default {
 
 .subtitle {
   font-weight: 300;
-  font-size: 42px;
-  color: #526488;
+  font-size: 20px;
+  color: $--color-primary; // !3. 样式变量：配置styleResources
   word-spacing: 5px;
   padding-bottom: 15px;
 }

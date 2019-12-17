@@ -23,9 +23,16 @@ module.exports = {
   loading: { color: '#fff' },
   /*
   ** Global CSS
+  ** // !在 Nuxtjs 里配置全局的 CSS 文件、模块、库。 (每个页面都会被引入)
   */
   css: [
+    { src: '@/assets/styles/reset.scss', lang: 'scss' }
   ],
+  // !https://zh.nuxtjs.org/api/configuration-build/#styleresources
+  // !在页面中注入一些变量和mixin而不必每次都导入它们
+  styleResources: {
+    scss: './assets/styles/variables.scss'
+  },
   /*
   ** Plugins to load before mounting the App
   */
@@ -41,6 +48,7 @@ module.exports = {
   */
   modules: [
     '@nuxtjs/pwa',
+    '@nuxtjs/style-resources'
   ],
   /*
   ** Build configuration
@@ -52,6 +60,6 @@ module.exports = {
     extend (config, ctx) {
     },
     // !分析并可视化构建后的打包文件 yarn build -a 
-    analyze: true 
+    // analyze: true //  Notice: Please do not deploy bundles built with analyze mode, it's only for analyzing purpose. 
   }
 }
