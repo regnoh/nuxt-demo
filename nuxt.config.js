@@ -1,11 +1,13 @@
 
 module.exports = {
-  mode: 'universal',
+  // !ssr / spa
+  mode: 'universal', 
   /*
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    // title: process.env.npm_package_name || '',
+    title: 'nuxt 首航',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -48,6 +50,8 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
-    }
+    },
+    // !分析并可视化构建后的打包文件 yarn build -a 
+    analyze: true 
   }
 }
