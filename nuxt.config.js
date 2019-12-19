@@ -26,6 +26,7 @@ module.exports = {
   ** // !在 Nuxtjs 里配置全局的 CSS 文件、模块、库。 (每个页面都会被引入)
   */
   css: [
+    '@/assets/font/iconfont.css', // ?不起作用
     { src: '@/assets/styles/reset.scss', lang: 'scss' },
     { src: 'gleaf/packages/theme-chalk/src/index.scss', lang: 'scss' },
     'gleaf-extend/lib/style/index.css',
@@ -33,7 +34,7 @@ module.exports = {
   // !https://zh.nuxtjs.org/api/configuration-build/#styleresources
   // !在页面中注入一些变量和mixin而不必每次都导入它们
   styleResources: {
-    scss: './assets/styles/variables.scss'
+    scss: './assets/styles/variables.scss',
   },
   /*
   ** Plugins to load before mounting the App
@@ -41,6 +42,7 @@ module.exports = {
   !每次你需要使用 Vue.use() 时，你需要在 plugins/ 目录下创建相应的插件文件，并在 nuxt.config.js 中的 plugins 配置项中配置插件的路径
   */
   plugins: [
+    { src: '~/plugins/font', ssr: false },
     { src: '~/plugins/gleaf', ssr: true }, // !ssr: 默认为 true, (false: 该文件只会在客户端被打包引入)。
     { src: '~/plugins/gleaf-extend', ssr: false },
   ],
