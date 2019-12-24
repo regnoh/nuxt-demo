@@ -10,14 +10,14 @@
       <div class="nav-left">
         <yl-menu :default-active="activeIndex" mode="horizontal" router @select="handleSelect">
           <yl-submenu index="1">
-            <template slot="title">产品</template>
+            <template slot="title">{{$t('role.name.pm')}}</template>
             <yl-menu-item index="2-1">选项1</yl-menu-item>
             <yl-menu-item index="2-2">选项2</yl-menu-item>
             <yl-menu-item index="2-3">选项3</yl-menu-item>
           </yl-submenu>
           <yl-menu-item index="3">消息中心</yl-menu-item>
           <yl-menu-item index="4">消息中心</yl-menu-item>
-          <yl-menu-item>
+          <yl-menu-item index="5">
             <a href="https://www.ele.me" target="_blank">订单管理</a>
           </yl-menu-item>
         </yl-menu>
@@ -26,14 +26,10 @@
       <div class="nav-right">
         <a class='nav-right-item' href="https://www.ele.me" target="_blank">订单管理</a>
         <a class='nav-right-item' href="https://www.ele.me" target="_blank">订单管理</a>
-        <yl-dropdown class='cursor' @command="setLang" trigger="click">
-          <span class="language-title">{{currentLangName}}<i class="yl-icon-arrow-down"></i></span>
-          <yl-dropdown-menu slot="dropdown">
-              <yl-dropdown-item v-for="(language, index) in languages" :key="index" :command="language.lang">
-                  {{language.name}}
-              </yl-dropdown-item>
-          </yl-dropdown-menu>
-        </yl-dropdown>
+        <!-- 
+          // !1.2 切换语言
+         -->
+        <lang-dropdown />
         <yl-button type="primary" round size="medium">免费注册</yl-button>
       </div>
     </div>
@@ -48,39 +44,21 @@
 </template>
 <script>
 import { mapState } from "vuex";
+import LangDropdown from '@/components/LangDropdown';
 export default {
   name: "Header",
+  components: {
+    LangDropdown
+  },
   data() {
     return {
       activeIndex: this.$route.path,
-      currentLangName: '简体中文',
-      languages: [
-        {
-          name: '简体中文',
-          lang: 'zh'
-        },
-        {
-          name: '英文',
-          lang: 'en'
-        },
-      ]
     };
-  },
-  computed: {
-    ...mapState({
-      topLeftNav: state => state.common.topLeftNav,
-      topRightNav: state => state.common.topRightNav
-    })
   },
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
     },
-    setLang(lang){
-      // i18n.setI18nLanguage(lang, true) // !内部调用 i18n.locale = lang;... 动态切换语言
-      console.log(this.languages.filter(_ => _.lang === lang));
-      this.currentLangName = this.languages.filter(_ => _.lang === lang)[0].name
-    }
   }
 };
 </script>

@@ -19,11 +19,13 @@
     "gleaf-extend": "^1.2.1",
     "imagemin-pngquant": "^8.0.0",
     "koa": "^2.6.2",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "vue-i18n": "^8.15.3"
   },
   "devDependencies": {
+    "cross-env": "^5.2.1",
     "node-sass": "^4.13.0",
-    "nodemon": "^1.18.9",
+    "nodemon": "^1.19.4",
     "sass-loader": "^8.0.0"
   }
 }

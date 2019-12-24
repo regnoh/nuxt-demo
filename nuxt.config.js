@@ -42,6 +42,7 @@ module.exports = {
   !每次你需要使用 Vue.use() 时，你需要在 plugins/ 目录下创建相应的插件文件，并在 nuxt.config.js 中的 plugins 配置项中配置插件的路径
   */
   plugins: [
+    { src: "~/plugins/lang.js", ssr: true },
     { src: '~/plugins/font', ssr: false },
     { src: '~/plugins/gleaf', ssr: true }, // !ssr: 默认为 true, (false: 该文件只会在客户端被打包引入)。
     { src: '~/plugins/gleaf-extend', ssr: false },
